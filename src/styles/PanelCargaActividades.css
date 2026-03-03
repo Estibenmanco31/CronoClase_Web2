@@ -14,10 +14,15 @@
   margin-bottom: 1rem; /* Espaciado entre el h2 y el div */
 }
 
-.PanelCargaActividades > div {
+.PanelCargaActividades > div:first-of-type {
   display: flex;
   justify-content: center; /* Centra los componentes horizontalmente */
   align-items: center; /* Centra los componentes verticalmente */
   gap: 1rem; /* Espaciado entre los componentes */
+  flex: 1; /* Expande para ocupar el espacio disponible */
+}
+
+.PanelCargaActividades > div:last-of-type {
+  width: 100%;
 }
 

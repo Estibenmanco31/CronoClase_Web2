@@ -1,0 +1,49 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #974c9e; 
+    width: 100vw;      
+    position: relative; 
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer-container h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 2.5rem;
+    color: rgb(64, 31, 90); 
+    margin-bottom: 0;
+}
+
+.titleCrono {
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center;
+    gap: 10px; 
+    color: black; /* O el color que prefieras */
+    margin: 0;
+    font-size: 2.5rem; 
+}
+
+.userCrono {
+    height: 3.5rem; 
+    width: auto;
+    display: block;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 400px) {
+    .titleCrono {
+        font-size: 1.5rem;
+    }
+    .userCrono {
+        height: 2rem;
+    }
+}
