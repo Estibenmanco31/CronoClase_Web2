@@ -13,9 +13,6 @@ export function PanelCargaActividades (){
                     <PanelMomento />
              </div>
         
-            <div>
-                <Footer />
-            </div>
         </main>
 
      
