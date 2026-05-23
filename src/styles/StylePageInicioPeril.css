@@ -1,0 +1,67 @@
+/* Esto asegura que la etiqueta body del navegador no meta márgenes blancos raros */
+body {
+  margin: 0;
+  padding: 0;
+   /* El mismo lila de tu fondo */
+}
+
+.home-container {
+  /* Tu color lila de fondo */
+  min-height: 100vh;         /* Obliga a ocupar el 100% de la altura de la pantalla */
+  width: 100%;               /* Ancho completo */
+  
+  /* Esto centra automáticamente el logo, el título y los botones */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Estilos para el encabezado (Logo) */
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos para el contenedor del texto y botones */
+.home-content {
+  text-align: center;
+}
+
+.home-title {
+  color: #5D44A6; /* Un color morado oscuro elegante para el texto */
+  font-family: "Rhodium Libre", serif; /* O la tipografía que estés usando */
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px; /* Separa los botones equitativamente */
+  justify-content: center;
+}
+
+/* Estilos para transformar los botones simples en botones modernos */
+.home-btn {
+  background-color: #5D44A6; /* Fondo morado oscuro */
+  color: white;              /* Texto blanco */
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;        /* Bordes redondeados */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar volumen */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Efecto al pasar el mouse por encima */
+.home-btn:hover {
+  background-color: #4A3386; /* Se oscurece un poco */
+  transform: translateY(-2px); /* Flota ligeramente hacia arriba */
+}

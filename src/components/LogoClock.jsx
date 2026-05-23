@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/StyleLogIn.css";
+import "../styles/StyleLogoCrono.css";
 import clockPng from "../assets/clock.png";
 
 export default function LogoClock() {

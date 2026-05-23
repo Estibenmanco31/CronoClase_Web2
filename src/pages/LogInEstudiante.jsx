@@ -13,9 +13,12 @@ export function LogInEstudiante() {
   const [estudiantes, setUserEstudiantes] = useState([]);
 
   function getEstudiantes() {
-    fetch(fakeRoutes.logInEstudiante)
+    fetch(end_points.estudiantes)
       .then((response) => response.json())
-      .then((data) => setUserEstudiantes(data))
+      .then((data) => {
+        console.log("Datos recibidos del fetch:", data); // <--- Aquí los verás
+        setUserEstudiantes(data);
+      })
       .catch((error) => console.log(error));
   }
 
@@ -51,66 +54,69 @@ export function LogInEstudiante() {
     }
   }
 
-  return (
-    <div className="log-in-estudainte-style">
-      <div className="h-96 flex items-center justify-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-        <div className="relative">
-          <div className="absolute -top-2 -left-2 -right-2 -bottom-2 rounded-lg bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 shadow-lg animate-pulse"></div>
+ return (
+  <div className="log-in-estudainte-style">
+    {/* Aplicamos tu lila exacto sacado de la imagen anterior */}
+    <div 
+      className="min-h-screen w-full flex items-center justify-center p-4 m-0" 
+      style={{ backgroundColor: '#CBC2F5' }} 
+    >
+      
+      <div
+        id="form-container"
+        className="bg-white p-10 sm:p-16 rounded-xl shadow-xl w-80 sm:w-96"
+      >
+        <h2 className="text-center home-title font-bold mb-10 text-gray-800">
+          Estudiante
+        </h2>
 
-          <div
-            id="form-container"
-            className="bg-white p-16 rounded-lg shadow-2xl w-80 relative z-10 transform transition duration-500 ease-in-out"
+        <form className="space-y-5">
+          <input
+            className="w-full h-12 border border-gray-400 px-3 rounded-lg"
+            placeholder="Email"
+            id="email"
+            name="email"
+            type="text"
+            onChange={(e) => {
+              setUserEstudiante(e.target.value);
+            }}
+          />
+
+          <input
+            className="w-full h-12 border border-gray-400 px-3 rounded-lg"
+            placeholder="Password"
+            id="password"
+            name="password"
+            type="password"
+            onChange={(e) => {
+              setPasswordEstudiante(e.target.value);
+            }}
+          />
+
+          <button
+            type="submit"
+            className="w-full home-btn"
+            onClick={(e) => signInEstudiante(e)}
           >
-            <h2 className="text-center text-3xl font-bold mb-10 text-gray-800">
-              Estudiante
-            </h2>
+            Sign in
+          </button>
 
-            <form className="space-y-5">
-              <input
-                className="w-full h-12 border border-gray-800 px-3 rounded-lg"
-                placeholder="Email"
-                id="email"
-                name="email"
-                type="text"
-                //se me te el onchange en los campos que requieran use state
-                onChange={(e) => {
-                  setUserEstudiante(e.target.value);
-                }}
-              />
+          <button
+            type="button"
+            className="w-full home-btn"
+          >
+            Register
+          </button>
 
-              <input
-                className="w-full h-12 border border-gray-800 px-3 rounded-lg"
-                placeholder="Password"
-                id="password"
-                name="password"
-                type="password"
-                onChange={(e) => {
-                  setPasswordEstudiante(e.target.value);
-                }}
-              />
-
-              <button
-                type="submit"
-                className="w-full h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                onClick={(e) => signInEstudiante(e)}
-              >
-                Sign in
-              </button>
-
-              <button
-                type="button"
-                className="w-full h-12 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                Register
-              </button>
-
-              <a className="text-blue-500 hover:text-blue-800 text-sm" href="#">
-                Forgot Password?
-              </a>
-            </form>
+          <div className="text-center pt-4">
+            <a className="text-[#493d9e] hover:underline text-sm" href="#">
+              Forgot Password?
+            </a>
           </div>
-        </div>
+        </form>
       </div>
+
     </div>
-  );
+  </div>
+);
 }

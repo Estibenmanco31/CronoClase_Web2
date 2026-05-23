@@ -1,8 +1,30 @@
 .log-in-estudainte-style{
 
-    background-color: #DAD2FF90;;
+    background-color: #DAD2FF90;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+/* Estilos para transformar los botones simples en botones modernos */
+.home-btn {
+  background-color: #5D44A6; /* Fondo morado oscuro */
+  color: white;              /* Texto blanco */
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;        /* Bordes redondeados */
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar volumen */
+  transition: all 0.2s ease-in-out;
+  font-family: "Rhodium Libre", serif; 
+}
+
+/* Efecto al pasar el mouse por encima */
+.home-btn:hover {
+  background-color: #4A3386;   /* El morado se oscurece */
+  color: #FFF2AF;              /* ¡ESTA LÍNEA cambia la letra a amarillo! */
+  transform: translateY(-2px); /* El botón flota un poco */
 }

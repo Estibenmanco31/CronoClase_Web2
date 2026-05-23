@@ -11,7 +11,11 @@ export function MainView() {
 
       <main className="mainViewContainer">
         <h1 className="main-title">2026</h1>
-        <Calendario />
+        
+        
+       <Calendario/>
+      
+      
       </main>
 
       <Footer />

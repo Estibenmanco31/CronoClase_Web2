@@ -5,34 +5,37 @@ import InfoMateria from "../components/InfoMateria";
 import "../styles/PageMaterias.css";
 import BannerMaterias from "../components/BannerMaterias";
 
+import { useState, useEffect } from "react";
+import { end_points, fakeRoutes } from "../services/api";
+
 export default function PageMaterias() {
-	const materias = [
-		"Matemáticas",
-		"Lengua",
-		"Historia",
-	];
+  const [estudiantes, setUserEstudiantes] = useState([]);
 
-	return (
-		<div className="page-container">
-			<NavBarEstudiante />
+  function getEstudiantes() {
+    fetch(end_points.estudiantes)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Datos recibidos del fetch:", data); // <--- Aquí los verás
+        setUserEstudiantes(data);
+      })
+      .catch((error) => console.log(error));
+  }
 
-			<main className="page-materias-container">
-				<h1 className="page-title">Mis Materias.</h1>
-				<BannerMaterias />
+  useEffect(() => {
+    getEstudiantes();
+  }, []);
 
-				<section className="materias-grid">
-					{materias.map((m) => (
-						<InfoMateria
-							key={m}
-							nombre={m}
-							descripcion={`Descripción breve de ${m}`}
-							evaluaciones={["Prueba parcial", "Recuperatorio"]}
-						/>
-					))}
-				</section>
-			</main>
 
-			<Footer />
-		</div>
-	);
+
+  
+
+  return (
+    <div className="page-container">
+      <NavBarEstudiante />
+
+      <main className="mainViewContainer"></main>
+
+      <Footer />
+    </div>
+  );
 }

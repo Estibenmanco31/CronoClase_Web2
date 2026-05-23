@@ -12,7 +12,7 @@ export function LogInProfesor() {
 
   function getProfesores() {
     // Asumiendo que existe esta ruta en tu api.js, si no, cámbiala a la correcta
-    fetch(fakeRoutes.logInProfesor || fakeRoutes.logInEstudiante)
+    fetch(fakeRoutes.logInProfesor )
       .then((response) => response.json())
       .then((data) => setProfesores(data))
       .catch((error) => console.log(error));

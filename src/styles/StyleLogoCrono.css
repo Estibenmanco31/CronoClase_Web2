@@ -1,0 +1,63 @@
+/* 1. Centra el logo y su texto en la pantalla */
+.container_title_crono {
+  display: flex;
+  justify-content: center;
+}
+
+/* 2. Le da la fuente cursiva, el color morado y alinea el texto con el reloj */
+.titleCrono {
+  font-family: "Vibur", cursive;
+  font-style: normal;
+  color: #493d9e;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+/* 3. Si tienes una imagen de avatar o reloj, esto la hace redonda con borde morado */
+.userCrono {
+  border: 2px solid #493d9e;
+  background-color: #DAD2FF;
+  border-radius: 50%;
+}
+
+/* --- RESPONSIVE (Media Queries) --- */
+
+/* Hace el texto más pequeño (70px) y el reloj más chico en pantallas menores a 400px */
+@media (max-width: 400px) {
+  .titleCrono {
+    font-size: 70px;
+  }
+  .userCrono {
+    height: 3rem;
+  }
+}
+
+/* Centra el contenedor en pantallas menores a 600px */
+@media (max-width: 600px) {
+  .container_title_crono {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+/* Ajusta tamaños intermedios (pantallas entre 401px y 576px) */
+@media (max-width: 576px) and (min-width: 401px) {
+  .titleCrono {
+    font-size: 70px;
+  }
+  .userCrono {
+    height: 3.5rem;
+  }
+}
+
+/* Hace el texto gigante (110px) y el reloj más grande en pantallas de PC (más de 577px) */
+@media (min-width: 577px) {
+  .titleCrono {
+    font-size: 110px;
+  }
+  .userCrono {
+    height: 4rem;
+  }
+}

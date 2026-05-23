@@ -9,6 +9,8 @@ import cerrarSesionImg from "../assets/images/lock-fill.svg";
 import { getLocalStorage, removeLocalStorage } from "../helpers/local-storage";
 import { redirectAlert } from "../helpers/alerts";
 
+import { Link } from "react-router-dom";
+
 export default function NavBarEstudiante() {
   const stored = getLocalStorage("estudiante");
   let userEstudiante = null;
@@ -32,15 +34,15 @@ export default function NavBarEstudiante() {
   return (
     <nav className="navCalendar">
       <div className="nav-buttons">
-        <a href="/calendario-estudiante" className="nav-button">
+        <Link to="/calendario-estudiante" className="nav-button">
           <img src={vistaEstudiantesImg} alt="Vista de Estudiantes" />
           {userEstudiante?.nombre ?? "Estudiante"}
-        </a>
+        </Link>
 
-        <a href="/panel-materias" className="nav-button">
+        <Link to="/panel-materias" className="nav-button">
           <img src={panelCargaImg} alt="Panel de Carga" />
           Materias
-        </a>
+        </Link>
 
         <a
           href="#"

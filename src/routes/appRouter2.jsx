@@ -8,6 +8,8 @@ import { MainView } from '../pages/MainView'
 import { LogInEstudiante } from '../pages/LogInEstudiante'
 import { LogInProfesor } from '../pages/LogInProfesor'
 import PageMaterias from '../pages/PageMaterias'
+import { Children } from 'react'
+
 
 export let appRouter2 = [
     {
@@ -41,8 +43,11 @@ export let appRouter2 = [
         element: <PanelProfesor />
     },
 
-    {path: "/calendario-estudiante",
-        element: <MainView />},
+    {path: "/calendario-estudiante/",
+        element: <MainView />
+        
+    
+    },
 
     {path: "/panel-materias",
         element: <PageMaterias/>} 
